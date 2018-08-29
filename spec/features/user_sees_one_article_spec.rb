@@ -20,6 +20,8 @@ describe 'user sees one article' do
       expect(page).to have_content(comment_2.body)
       expect(page).to_not have_content(article_2.title)
       expect(page).to_not have_content(article_2.body)
+      expect(page).to have_content("Comments (#{article_1.comments.count})")
+
     end
   end
   describe "they fill in a comment form" do
