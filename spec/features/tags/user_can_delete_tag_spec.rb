@@ -8,7 +8,6 @@ describe 'user visits tag index page' do
 
     visit tag_path(tag_1)
     click_on "Delete"
-    save_and_open_page
 
     expect(current_path).to eq(tags_path)
     expect(page).to_not have_contect(tag_1.name)

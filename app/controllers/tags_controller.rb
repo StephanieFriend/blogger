@@ -10,8 +10,7 @@ class TagsController < ApplicationController
 
   def destroy
     @tag = Tag.find(params[:id])
-    Tag.destroy(params[:id])
-    require "pry"; binding.pry
+    @tag.destroy
     flash.notice = "Tag '#{@tag.name}' deleted!"
     redirect_to tags_path
   end
